@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import LoaderButton from "../components/LoaderButton";
+import FacebookButton from "../components/FacebookButton";
 import "./Login.css";
 import { Auth } from "aws-amplify";
 import { useFormFields } from "../libs/hooksLib";
@@ -33,8 +34,14 @@ export default function Login(props) {
     }
   }
 
+  let handleFbLogin = () => {
+    props.userHasAuthenticated(true);
+  };
+
   return (
     <div className="Login">
+      <FacebookButton onLogin={handleFbLogin} />
+        <hr />
       <form onSubmit={handleSubmit}>
         <FormGroup controlId="email" bsSize="large">
           <ControlLabel>Email</ControlLabel>
@@ -67,6 +74,8 @@ export default function Login(props) {
         >
             Login
         </LoaderButton>
+        
+        
       </form>
     </div>
   );

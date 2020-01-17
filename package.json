@@ -35,5 +35,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "main": "index.js",
+  "repository": "https://git-codecommit.us-west-2.amazonaws.com/v1/repos/serverless-stack-client",
+  "author": "윤남기 <skarlsladlek@naver.com>",
+  "license": "MIT"
 }
